@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+
+    <!-- 调试模式-->
+    <constant name="struts.devMode" value="true"></constant>
+
+    <package name="p1" extends="struts-default">
+        <!-- 配置jsp页面的访问规则-->
+        <action name="page_*_*" >
+            <result name="success">/WEB-INF/pages/{1}/{2}.jsp</result>
+        </action>
+
+        <action name="test" class="com.gyf.bos.web.action.TestAction" method="test">
+            <result name="success">page_user_list</result>
+        </action>
+    </package>
+</struts>
